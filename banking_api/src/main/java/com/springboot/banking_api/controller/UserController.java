@@ -1,9 +1,6 @@
 package com.springboot.banking_api.controller;
 
-import com.springboot.banking_api.dto.BankingResponse;
-import com.springboot.banking_api.dto.CreditDebitRequest;
-import com.springboot.banking_api.dto.EnquiryRequest;
-import com.springboot.banking_api.dto.UserRequest;
+import com.springboot.banking_api.dto.*;
 import com.springboot.banking_api.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -39,6 +36,11 @@ public class UserController {
     @PostMapping("/debit")
     public BankingResponse debitAccount(@RequestBody CreditDebitRequest request){
         return userService.debitAccount(request);
+    }
+
+    @PostMapping("/transfer")
+    public BankingResponse transfer(@RequestBody TransferRequest transferRequest){
+        return userService.transfer(transferRequest);
     }
 
 }
