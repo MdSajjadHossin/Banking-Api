@@ -114,8 +114,8 @@ public class UserServiceImpl implements UserService{
         userRepository.save(userToCredit);
 
         return BankingResponse.builder()
-                .responseCode(AccountUtils.ACCOUNT_EXIST_CODE)
-                .responseMessage(AccountUtils.ACCOUNT_FOUND_MESSAGE)
+                .responseCode(AccountUtils.AMOUNT_CREDITED_SUCCESSFUL_CODE)
+                .responseMessage(AccountUtils.AMOUNT_CREDITED_SUCCESSFUL_MESSAGE)
                 .accountInfo(AccountInfo.builder()
                         .accountName(userToCredit.getFirstName() + " " + userToCredit.getLastName())
                         .accountBalance(userToCredit.getAccountBalance())
